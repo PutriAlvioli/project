@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SELAMAT DATANG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container-form {
+      background-color: #bfb3b3;
+      border-radius: 5px;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #777;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .password-container input[type="password"] {
+      padding-right: 40px;
+    }
+
+    .show-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .show-password-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: rainbow 2s infinite;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-color: red;
+      }
+      14% {
+        background-color: orange;
+      }
+      28% {
+        background-color: yellow;
+      }
+      42% {
+        background-color: green;
+      }
+      57% {
+        background-color: blue;
+      }
+      71% {
+        background-color: indigo;
+      }
+      85% {
+        background-color: violet;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="register.php" class="container-form">
+    <h2>REGISTER</h2>
+    <div class="logo-container">
+      <img src="/img/logo_2" alt="" class="logo">
+    </div>
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <div class="password-container">
+      <input type="password" id="password" name="password" required>
+      <button type="button" class="show-password" onclick="togglePasswordVisibility()">
+        <span class="show-password-icon"></span>
+      </button>
+    </div>
+    <label for="password">Confirm Password:</label>
+    <div class="password-container">
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <button type="submit" class="show-password" onclick="togglePasswordVisibility()">
+        <span class="show-password-icon"></span>
+      </button>
+    </div>
+    <input type="submit" value="Register">
+    <div class="login-link">
+      Sudah punya akun? <a href="/login/login.html">Login</a>
+    </div>
+  </form>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var confirmInput = document.getElementById("confirm-password");
+      var passwordIcon = document.querySelector(".show-password-icon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        confirmInput.type = "text";
+        passwordIcon.style.backgroundColor = "transparent";
+      } else {
+        passwordInput.type = "password";
+        confirmInput.type = "password";
+        passwordIcon.style.backgroundColor = "transparent";
+      }
+    }
+  </script>
+</body>
+</html>

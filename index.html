@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #777;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input[type="password"] {
+            padding-right: 40px;
+        }
+
+        .show-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .show-password-icon {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: #fff;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .remember-me-label {
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        .password-reset-link a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Warna-warni */
+        input[type="text"],
+        input[type="password"],
+        input[type="button"],
+        .show-password-icon,
+        .password-reset-link a,
+        .register-link a {
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover,
+        input[type="button"]:hover,
+        .show-password-icon:hover,
+        .password-reset-link a:hover,
+        .register-link a:hover {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>LOGIN</h2>
+        <div class="logo-container">
+            <img src="/img/logo_2" alt="" class="logo">
+        </div>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <button type="button" class="show-password" onclick="togglePasswordVisibility()">
+                    <span class="show-password-icon">&#128065;</span>
+                </button>
+            </div>
+
+            <div class="link-container">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe" class="remember-me-label">Ingat Saya</label>
+                </div>
+                <div class="password-reset-link">
+                    <a href="forgot.html">Lupa Password?</a>
+                </div>
+            </div>
+
+            <input type="button" value="Login" onclick="performLogin()">
+
+            <div class="register-link">
+                Belum punya akun? <a href="/login/login.html">Register</a>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var passwordIcon = document.querySelector(".show-password-icon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordIcon.innerHTML = "&#128064;";
+            } else {
+                passwordInput.type = "password";
+                passwordIcon.innerHTML = "&#128065;";
+            }
+        }
+
+        function performLogin() {
+            // Implement login logic here
+        }
+    </script>
+</body>
+</html>
